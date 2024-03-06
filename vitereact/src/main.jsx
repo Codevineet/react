@@ -9,13 +9,11 @@ import App from './App.jsx'
 // }
 
 
-const ReactElement = React.createElement({
-  
-})
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
     {/* <MyApp/> */}
-  </React.StrictMode>,
+  </React.StrictMode>
 )

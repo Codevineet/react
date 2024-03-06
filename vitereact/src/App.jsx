@@ -1,9 +1,13 @@
 import Greet from "./Test"
 
 function App() {
+
+  const userName = 'Vineet Jindal';
+
   return (
     <>
-      {/* <h1>Hello world, my name is vineet</h1> */}
+      //this is evaluated expression inside the curly braces.
+      <h1>Hello {userName}</h1>
       <Greet/>
     </>
   )
