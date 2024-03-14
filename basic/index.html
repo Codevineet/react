@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let element = document.createElement('a');
+    element.setAttribute('href' , 'https://google.com');
+    element.innerHTML = "Open the link";
+
+    document.body.appendChild(element);
+
+    /*
+        if we are using the cdn links then how things are working on there
+        //createElement takes three arguments, first one is the tag, second object , third the data 
+        //inside the tag.
+
+        const element = React.createElement("h1" , {id : "heading"} , "This is the heading");
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(heading);
+
+
+        ReactElement(object) =>while reding to DOM -> HTML(Browser Understand)
+
+    */
+</script>
+</html>
