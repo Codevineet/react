@@ -1,16 +1,14 @@
-import Greet from "./Test"
+import HeaderComponent from "./Header.jsx";
+import Box from "./RestaurantBox.jsx";
 
-function App() {
 
-  const userName = 'Vineet Jindal';
-
+const AppLayout = () =>{
   return (
-    <>
-      //this is evaluated expression inside the curly braces.
-      <h1>Hello {userName}</h1>
-      <Greet/>
-    </>
+    <div>
+      <HeaderComponent/>
+      <Box/>
+    </div>
   )
 }
 
-export default App
+export default AppLayout; 
