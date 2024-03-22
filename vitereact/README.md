@@ -15,9 +15,25 @@ Currently, two official plugins are available:
 - compress the files
 - consistent hasing
 - Differential Bundling - run app smoothly on older browsers.
-- Error handling 
+- Error handling
 - Diagnostic
 - https
-- dist cache 
+- dist cache
 - Tree Shaking - remove unused code.
 
+- Default Export/Import:
+
+export default Component;
+import Component from "path";
+
+- Named Export/Import:
+
+export const Component;
+import {Component} from "path";
+
+# React Hooks
+
+They are normal js Utility functions
+
+- useState() - use to generate superpower react variables.
+  -useEffect()

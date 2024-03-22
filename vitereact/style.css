@@ -1,148 +1,153 @@
-body{
-    background-color: #FDFDFD;
-    padding:0px;
-    margin:0px;
+body {
+  background-color: #fdfdfd;
+  padding: 0px;
+  margin: 0px;
 }
 
-.Header{
-    display:flex;
-    height:120px;
-    background-color: #FFFFFF;
-    align-items: center;
-    justify-content: space-around;
-    width:100%;
-    border-bottom: 1px solid #FDFDFD;
+.Header {
+  display: flex;
+  height: 120px;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  border-bottom: 1px solid #fdfdfd;
 }
-.header-logo{
-    width:25%;
-    display:flex;
-    align-items: center;
-    margin:20px;
-}
-
-.header-logo p{
-    margin:10px;
-    padding:20px;
-    /* background-color: red; */
-    font-size: 20px;
-    color:#6E6E6E;
-    border-bottom: #FFFFFF;
-    cursor: pointer;
-
+.header-logo {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  margin: 20px;
 }
 
-.header-logo p:hover{
-    color:#FC8019;
-}
-.header-logo img{
-    height:100px;
-    width:100px;
-    border-radius: 20px;
-}
-
-.nav-links{
-    width:65%;
-    display:flex;
-    align-items: center;
-    padding:10px;
-    margin:10px;
-    font-size: 20px;
+.header-logo p {
+  margin: 10px;
+  padding: 20px;
+  /* background-color: red; */
+  font-size: 20px;
+  color: #6e6e6e;
+  border-bottom: #ffffff;
+  cursor: pointer;
 }
 
-.nav-links a{
-    text-decoration: none;
-    color:#6E6E6E;
-    font-size: 20px;
-    margin:20px;
-    font-weight: 500;
-    padding:10px;
-    border-radius: 20px;
+.header-logo p:hover {
+  color: #fc8019;
 }
-#search-bar{
-    padding:10px;
-    margin:10px;
-    height:20px;
-    width:35%;
-    /* border:none;/ */
+.header-logo img {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
 }
 
-#search-btn{
-    padding:10px;
-    border:none;
-    cursor: pointer;
-    font-size: 17px;
-    margin:10px;
-}
-.nav-links a:hover{
-    color:#FC8019;
+.nav-links {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  font-size: 20px;
 }
 
-
-.restaurant-container{
-    margin-top: 20px;
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.nav-links a {
+  text-decoration: none;
+  color: #6e6e6e;
+  font-size: 20px;
+  margin: 20px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 20px;
+}
+#search-bar {
+  padding: 10px;
+  margin: 10px;
+  height: 20px;
+  width: 35%;
+  /* border:none;/ */
 }
 
-.specific-location{
-    font-size: 30px;
-    font-weight: bold;
-    margin-left:70px;
-    margin-top:20px;
+#search-btn {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  margin: 10px;
+}
+.nav-links a:hover {
+  color: #fc8019;
 }
 
-
-.card{
-    padding:10px;
-    margin:10px;
-    width:280px;
-    position: relative;
-    cursor: pointer;
+.restaurant-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.card:hover{
-    /* background-color: #eceaea; */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-
+.specific-location {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 70px;
+  margin-top: 20px;
 }
 
-
-.photo img{
-    width:280px;
-    height:210px;
-    position: relative;
-    border-radius: 20px;
-    /* opacity: 0.9; */
+.card {
+  padding: 10px;
+  margin: 10px;
+  width: 280px;
+  position: relative;
+  cursor: pointer;
 }
 
-.offers{
-    position: absolute;
-    top:167px;
-    left:35px;
-    color:white;    
-    font-weight: bold;
-    font-size: 20px;
+.card:hover {
+  /* background-color: #eceaea; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-.restaurant-detail{
-    margin-left: 20px;
-    /* color:#414449; */
-    padding:0px;
-
+.photo img {
+  width: 280px;
+  height: 210px;
+  position: relative;
+  border-radius: 20px;
+  /* opacity: 0.9; */
 }
 
-.restaurant-name , .delivery-time{
-    color:#414449;
-    font-size: 20px;
-    font-weight: bolder;
-    /* padding:0px; */
-    margin:0px;
+.offers {
+  position: absolute;
+  top: 167px;
+  left: 35px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.cusine , .location{
-    margin:4px;
+.restaurant-detail {
+  margin-left: 20px;
+  /* color:#414449; */
+  padding: 0px;
 }
 
+.restaurant-name,
+.delivery-time {
+  color: #414449;
+  font-size: 20px;
+  font-weight: bolder;
+  /* padding:0px; */
+  margin: 0px;
+}
 
+.cusine,
+.location {
+  margin: 4px;
+}
+
+.filter-btn {
+  text-align: center;
+  background-color: #edeef1;
+  margin: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}

@@ -1,14 +1,13 @@
-import HeaderComponent from "./Header.jsx";
-import Box from "./RestaurantBox.jsx";
+import HeaderComponent from "./components/Header.jsx";
+import Box from "./components/RestaurantBox.jsx";
 
-
-const AppLayout = () =>{
+const AppLayout = () => {
   return (
     <div>
-      <HeaderComponent/>
-      <Box/>
+      <HeaderComponent />
+      <Box />
     </div>
-  )
-}
+  );
+};
 
-export default AppLayout; 
+export default AppLayout;
