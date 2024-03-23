@@ -1,19 +1,33 @@
+import { IMG_CDN_URL } from "../utils/constants";
+
 const HotelCard = (props) => {
   const { restData } = props;
   //Destructor the elements again
-  const { img, offers, name, rating, cusine, location } = restData;
+  const {
+    cloudinaryImageId,
+    costForTwo,
+    name,
+    avgRating,
+    cuisines,
+    locality,
+    areaName,
+  } = restData;
+
+  // console.log(costForTwo);
   return (
     <div className="card">
       <div className="photo">
-        <img src={img} alt="" />
-        <p className="offers">{offers}</p>
+        <img src={IMG_CDN_URL + cloudinaryImageId} alt="" />
+        <p className="offers">{costForTwo}</p>
       </div>
       <div className="restaurant-detail">
         <p className="restaurant-name">{name}</p>
-        <p className="delivery-time">⭐{rating}</p>
+        <p className="delivery-time">⭐{avgRating}</p>
 
-        <p className="cusine">{cusine}</p>
-        <p className="location">{location}</p>
+        <p className="cusine">{cuisines.join(", ")}</p>
+        <p className="location">
+          {locality} , {areaName}{" "}
+        </p>
       </div>
     </div>
   );
