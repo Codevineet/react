@@ -11,6 +11,7 @@ const HotelCard = (props) => {
     cuisines,
     locality,
     areaName,
+    sla,
   } = restData;
 
   // console.log(costForTwo);
@@ -23,7 +24,7 @@ const HotelCard = (props) => {
       <div className="restaurant-detail">
         <p className="restaurant-name">{name}</p>
         <p className="delivery-time">⭐{avgRating}</p>
-
+        <p className="time">Delivery Time: {sla.deliveryTime} mins</p>
         <p className="cusine">{cuisines.join(", ")}</p>
         <p className="location">
           {locality} , {areaName}{" "}

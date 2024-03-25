@@ -1,24 +1,36 @@
+import { useState } from "react";
+import { LOGO } from "../utils/constants";
+
 const HeaderComponent = () => {
+  let [btnName, setBtnName] = useState("Log Out");
+
+  const loginChange = () => {
+    if (btnName === "Log Out") {
+      setBtnName("Log In");
+    } else {
+      setBtnName("Log Out");
+    }
+  };
+
   return (
     <div className="Header">
       <div className="header-logo">
-        <img
-          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoGBw4ODhAODg4ODg8ODg4ODg4ODhAPDg4PFhIYGBYSFhQaHjgiGhw0HRYWMDQlNC07PjIxGiFDPTcwOy0wMS4BCwsLDw4PHRERHTAoIigwMDkwMDYyMDIwLi4wMDAwMDIyMDIyMDAyMDAwMDIwMjAwMDEwMDIuMjAwMTAwMC4wMP/AABEIAMoA+gMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAAAQIDBAUGBwj/xABHEAACAgEBBAUIBQkECwAAAAAAAQIDEQQFEiExBhNBUWEHFCIyUnGBoSORkpPRM0JTYnKCsdLTF1XC4RUWNENUY3OissHw/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAMEBQEC/8QANBEAAgECBAQCCAYDAQAAAAAAAAECAxEEEiExQVFx8AVhE1KBkaGx0eEiMkJywdIjgvEU/9oADAMBAAIRAxEAPwDuaazLrgRqgZNcACVcC6ERQiXRiAKMS1IIokkACRJIaQ8AAkPAwADAYGAAAAwBAMABAMABCGAAhYJAAQwJomLABU0JosaItAFMolcomQ0VyiAYk4GPZAzpxKLIAGttrMfqzY2wKNwAzKoGRCJCuJkQiAOES2KFFE0gASJpAkSQAJDAYAAAwAAAAAAAAAAAAAAAAAAABDAAQiQgCLQmiQmAVtEZIsaItAFEolU4mTJFU0AYdkSjdMyyJVugGRCJdFEIIuigCUUSSFFE0ANDQIYAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQmSEARZFomRYBCSKpIuaISQBjzRTumTNFWAC6CLYohBFkUASRJCRJAAhgMAAAAAAAAAAAACE5xisyaiu9tJGDt7Zvnmlt0/WWVOyGI21ylGdclxi00888ZXasrtPnnbOkvpvto1W87apuFinJz4rlJN801hp9zRFUqZOBLTp5+J9CarpFoKfy2u0lXhZqaoP5yNff0+2PXz19Mv+kp2/wDgmeAJJcuAyB4p8iZYdcz6B2F002ftC50aSyyyca3bJum2uCimlluSXbJHQHmHkX1Ghpps39TRHWai3DqnJQsVUOEIre9bi5Ph7S7j08swblFNlepFRlZABhbW2pRo6Z6jU2xpqhjenLL4t4SSXFvwRotm+UfZGomq46nq5S4Rd9c6oyf7clhfFnq6WjPKi2rpHVARTzxRI6cAAMbV6yumG/ZNQXJZ5t9yXazkpKKu9jqTbsjJEUae9WJPDg2t7cnhSUc8G0nwMgJp6o5awiLJCZ0EGRkibIMAqkivBdIrwAWxJojEmgBokhIkAAxIYAAAAABrNbtR0cZ0XuC/3kdyUV7/AEsr4lNPSfSyeJOcPGccr/tbIJYqjGWWUkn56fMkVGpJXiro3IFVF0LIqcJRnF8pRaaZaTJ3IwPFvLTqKp7ShXCCVlWngr7Fzm5NyhFrwj2/r+CPaTwzyv6Sde17ZyT3b6aLIPsaUOraz74P60RYj8hNQ/OciAAZ5dOz8mnRbQbVWohqXeraHXOKqshGEq5Jrk4t5Uovt/OR7FsjZ1ekoq01W866YbkHOW9JrOct9vM8y8hWkm7tXfh9XGqulPslOUnJr4KK+0j1k0KCWRMpV281jz7y40zls+icU3CvWQlZ3RTqsjGT+LS/ePHj6W2rs+rVUWae5b1d0HCa5PD7U+xp8U+xpHhHTDohqtl2SU4ys07f0OqjH6OSb4Rn7E/B8+zJFiKbbzIkoTVsp03kl6Y2V2w2bqJuVVvo6Wcm26rMZVWfZfYux4S58PXT5l2bcqtRTa5biqvpsc/Y3Zp73wwfS8JKSTi000mmnlNPtRJh5OUbPgeMRFKV+ZhbV2lDTxWfSnLhCtetJ/gaONk5WudjjPUJbzcvyGij3vscvDv72Yu0NVKnWXOXp5cop59KEZLhuPskk+BJ20KMVGTdMd2XUcVddb/zGljGe7s5cTLrYr0k3d2yt6Xtaz389eP6eCcncuU6GSKtxW/Vbd78XY3WzdRFOKjvONkpOMpcbtTJR9K2WfVhwwvhyRujUbG0c03qL/ytkUowxhU19kUuz3f5m3NTD5sn4u104dOHHW7KNa2fTvvvQQMYiciIsiybIMAhIrLZEACcSSIxJoAkhiQwBgAAAAAAI5PpLsdVfTVLEG8TgvzW+TXgdaVaiqNkJQksxnFxl7mivisPGvTyPfg+T73JaNV0pZl7Ti+j+0ZUXRWfo5yUbI9izwUvf/6O5PONTTKqycJetGUov4PmdNtPbm5pq3F/TXQT8YcMSfvzlL/IyvDcUqVOcam0denBr3/MvYuhnnFw4/8AU/cZe1Nv1UNwSdli5xi8KP7Uuw5zam1KNXu+dbP02oUN7c62CslFPGd2TXDkvqMCuuc29yMpPPHdi5PPjgv/ANG6n9Bf93P8CvPxDFVHeF0vJX+NncmhhKMFaWr83b4XNfreiuxtVndru2fY/wA+mbtpz4wlyXuSNMvJVrZXRjVfpbdPLnqoyaUF25r573gm/Fo6K2qcPXhKH7UWv4ktNqbK5b9cpQl3xeM+/vOw8Radq0b/AAf0+R2WG0/xv36r6nY9Gdh0bO0sNNQnuxzKU5evZY/WnLx/gkl2G1OV0PSqawr4by9uGIy+MeT+RuNPtzS2crYxfdP0X8+Bs0cZQqK0ZLo9H300Myph6sH+Je3c2RCcFJOMkpJrDTWU13NFXnlP6Wr7yP4mPqdt6atelbFv2YPfl8ixKpCCvJpLqQqMpOyRpuknQLQa2mUIUVaW3jKq/T1QrlGf6yjjfj3p/DD4mn6LarW7N0ctJqZVzurtnXRGMus6ilcFmXam8uMexNZx6q2W1OktlicKU6ovhvZ+kkv8P/3EwNNsPU6qm6VM41S6uapssjmLtxwXuz2/JmTWxjqz9HhVdvj5d8fdc0KeHyRzV3py7+X8Gx2HsTzhO7UbzjJtxW81Kb7W3zwb/TbJ09TUoVRUlyk8ya9zfI8o6G9PNRsu2Wi2krZ0V2OuW/mV+kmnx8ZQz2fZzwT9e0mqrvrhbTONldkVKFkGnGUX2plzC4ajCKsrtbtrW5XxFSo5O70+BeAAXSsAhiAEyLJMiwCEiJKREAlEmiESaAJIYkMAYAAAAAAAAAAcb0t0+5qN9crIqX7y4P5bv1i2Boa5xnqNQ/oqeGHnDlz4+HFcO3JtOmVOaYWdtdm6/wBmS/FIwujcYX6e/SSe7vONkWufYs/Bxj9ZgToxWOaaTum0ns3bS/tNWNR/+VNPbR9L/Sxs6+kWjilGMnFLklVNJfDBL/WXSfpX93P8DR7S2Lp9JFT1O0KNPGT3YyuSrTfcsz4mv6zZf99aD7cP5yx6fxH1I/D+5D6LCes+/wDU619JdJ+kf3c/wMLU6zZdvrpZ9pVWRl9aRz+/sv8AvnQ/bh/MPf2Z/fOh+8h/MeZ1MfNWlTi152/ueoww0XdTku/2mZZoNJbNR0+palJ4jC2E0m3yW/jh9RTqti6mvnVKSX50PSXy4kdFfsqNkJS2xoZKM4vdjbXFyafBZcuB2ut1tVFM77ZxhVXB2Tm36KilnPieKXh6rRbqxyO/6Xw6Xlb2NHqpi3TaUHmXmv50PPpcHh8H3PgyVNUrHuwjKb7oJyfyN30L6UWbXt1VqojVo6JRqoc/Susm8uTl2R9Hc9Fe1zZ1cYpckl7jkPBovXPp+37nZeINaOOvX7HL7J6MybU9T6MearT9KXva5Lw/gdPCCilGKUUkkklhJdxMDWw+Gp0I2gvbxZQq1p1XeR5/5VOhfndb1+lhnU0w+lriuOoqXcvbS5d64dxxHk86ZWbNujVOTnorppW15yqnJ466Hd4rtXjg93OF215LtLqdbHVwtdFcrFbqNNGtSjbLOXuyz6Ge3g+bxgTpvNmjueoVFlyz2O6AAJyABDEAJiY2RYBBkSUiIBKJJEIk0ATQyKJADASGAAAAAAAAGFtjT9bp7YJZbi3FfrLivmjidBq5U2xshzi+K7JR7Y/UehnL7b6OycpWadJqT3pV5Safa14eBleJYapNxq091y35q3QvYOtGN4T2fuNT5QOidu2lptTo7qk642Qdd8pRjiTTbUop4kmsNY48OPDjyf8AZHtb29B9/d/SO12b59pZNwptcW/Sg65uEvHgufiHSTYV+0krNPqdfs/VRjjcdmor0tqXZLdeE/1ufenwx7o1o11ecWpctUn0b+QnGVLSMk489Hbr9jiv7I9re3oPv7v6Qf2R7W9vQff3f0inX7A6T0SalLaNqXKdGtuujLxSU9760jA816Qt43dufF60lywX6GeU5+sjbR8ke1crNmgSzxfXXPC78dVxKun/AEhitPptj6e7raNDTTXqb0+F91UFFJfqrGff+zx18tk9ILE4Sq2tOMvRlGyWpcZJ9jUnjB0XQbyY3u6Go2jBU1VyjOGmcoystknlb+68RhnHDOXyaS59Ub/hhFq+4cktZNOx2/k32O9FsuiucXG21PUXJrElOziovxUd1funSgBbSsrFRu7uAAB04AAAAAAAAIYgBMiyTIsAhIjklIhkAcSaKossiAWIaIokgBjEMAAAAAAAAAAAA5zpBt6Vc3TS0pR9eeE2n7K/E03nWtS6zf1Cjz327N363wE93z19d6vnL6zPLHWcc+B3Frhuve3dzde9nG7u4458MGHShUxkpyc3GzskuH258W76o0pyhhoxiop33b4ml6Pbclc+qtxv4zGSWN5Lmmu85jyleUCzR2PRaFxjfup6i9pTdG8sxhCL4b2Gm21wTXBt8MrZH+2V7mcdd6PfuZf+E8429hbdv87/ACS2rJ3b3/Dec5+rqsfAmweJqToWk9U7X77tY81qEI1bpaWvYPP9uuHnnW7V6r1uv39V1GOe9n1d35HdeTTp/bq7Vodc1K6UW6NQlGLtcVl1zS4b2E2mlxw+3n6GpV9XlOHVbuU8x6vcxzzy3cHgOy917cp8z/JPa0HRucF5v51lYx+b1fyLrTpta7kEWqiemx9CAAFkrAAAAAAAAAAACYAJgCZFkmQYBGRDJKTK8gBBlsWUQZbFgFqJIrTJoAmgEhgDAAAAAAABN44jAA5LpPpK3J3VyxJ+vBxfF+0vE0sNRZOKrVk5R7K9+TS/d5HojhF80n70hdVH2Y/ZRnVvDaVSbmm1fe3HvjwfIt08ZOEcrSdtrmg6MbMUH1s3mbTUYpPEE+bz3nM+VDoYtVZ57pZRWo3VG6mXoxuUViMoy5KeMLjwaS4rHH0dJLksA4p80n70WqeHp06fo4rTvXqQyrTlPO3qfOfm+01HzXGt6vl1G9f1H2c7h6H5MOhi01i1urcXeotUUx9JU7yw5yljDnhtYXBJvi88PR+ph7EfsolGKXJJe5HqNFRd9zsq0pK2xIAAlIQAAAAAAAAAQACYCYAmQkxtkZMAhJlWSU2QyAKDLosxK5F8GAZEWTTKosmmAWIZBMkgCQyIwBgAAAAAAAAAAAAAAAAAAAAAAAAAACAAAEAJkWxtkGwAkyuTJSZVJgEJsqyOyRVvACrkXwkYFUzKrkAZcZFsWY0JFsZAFyZNMqiySYBYMgmSyASAQwBgIABgAAAAAAAAAAAAgBiAAAEGRZAGRbBsi2ADZGTBsrlIAUmVTkSnIx7JACskUb4WzKN8ArpsMquZrqTMqAM6Ey+EjDrL4AGTGRYmURLIgFqZJMrRJAE8jyRQ0ASGRGgBgIABgAAAACAGAgAABCAHki2DIsAGxNgyEgBSkVykORVMAhOZRZMsmY1gBVbYY/WErjGAP//Z"
-          alt="logo"
-        />
+        <img src={LOGO} alt="logo" />
         <p>FoodieFy</p>
       </div>
       <div className="nav-links">
-        <input
+        {/* <input
           type="text"
           name="search"
           id="search-bar"
           placeholder="Search for Restaurents"
-        />
-        <input type="button" value="Search" id="search-btn"/>
+        /> */}
+        <input type="button" value="Search" id="search-btn" />
         <a href="#">Offers</a>
         <a href="#">Help</a>
-        <a href="#">Sign In</a>
+        <a href="#" onClick={loginChange}>
+          {btnName}
+        </a>
         <a href="#">Cart</a>
       </div>
     </div>
