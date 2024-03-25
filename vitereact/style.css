@@ -151,3 +151,22 @@ body {
   border-radius: 10px;
   padding: 10px;
 }
+
+/* Shimer Component */
+.shimer-container {
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.shimer-card {
+  background-color: #edeef1;
+  height: 245px;
+  margin: 20px;
+  padding: 10px;
+  width: 280px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}

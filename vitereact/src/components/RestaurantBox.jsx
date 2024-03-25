@@ -1,7 +1,8 @@
 import HotelCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
-// import restaurantListt from "../utils/mockData";
 import { SWIGGY_API } from "../utils/constants";
+import ShimerUI from "./Shimer";
+// import restaurantListt from "../utils/mockData";
 
 const Box = () => {
   //state variable.
@@ -17,7 +18,7 @@ const Box = () => {
   const fetchData = async () => {
     const data = await fetch(SWIGGY_API);
     const json = await data.json();
-    //optional chaning
+    //optional chaining
     let restaurants =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
@@ -26,9 +27,15 @@ const Box = () => {
     setRestaurantList(restaurants);
   };
 
-  // console.log(cityName);
+  //Rendering loading screen when no data is fetched from the api
+  //but showing loading is not a good practice so we can show a fake page till our data get
+  //rendered from the api
+  //we do by using  shimer UI means redering fake things so that UI expereicnce should be good.
+  //conditional rendering it is....
 
-  return (
+  return restaurantList.length == 0 ? (
+    <ShimerUI />
+  ) : (
     <>
       <button
         className="filter-btn"
