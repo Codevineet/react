@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { LOGO } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 const HeaderComponent = () => {
   let [btnName, setBtnName] = useState("Log Out");
@@ -31,8 +32,10 @@ const HeaderComponent = () => {
           placeholder="Search for Restaurents"
         /> */}
         <input type="button" value="Search" id="search-btn" />
+
         <a href="#">Offers</a>
-        <a href="#">Help</a>
+        <a href="/contact">Help</a>
+        <Link to="/contact">Contact</Link>
         <a href="#" onClick={loginChange}>
           {btnName}
         </a>
