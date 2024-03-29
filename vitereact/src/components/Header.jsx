@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LOGO } from "../utils/constants";
 
 const HeaderComponent = () => {
@@ -11,6 +11,11 @@ const HeaderComponent = () => {
       setBtnName("Log Out");
     }
   };
+
+  //header is updated after every updation of btnName.
+  useEffect(() => {
+    console.log("Header updated");
+  }, [btnName]);
 
   return (
     <div className="Header">

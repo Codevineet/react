@@ -11,11 +11,14 @@ function Box() {
   let [restaurantList, setRestaurantList] = useState([]);
   let [filterRestaurantList, setFilterRestaurantList] = useState([]);
 
-  let [cityName, setCityName] = useState([]);
+  let [cityName, setCityName] = useState("");
   let [searchTxt, setSearchTxt] = useState("");
 
   //useEffect, there are two parameters 1. callback function , dependency array
+  // if no dependency array means it is called on every render.
+  //if dependency array is= then useeffect is called everytime it updated.
   useEffect(() => {
+    console.log("Hellow");
     fetchData();
     // fetchData2();
   }, []);
