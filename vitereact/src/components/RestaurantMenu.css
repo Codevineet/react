@@ -1,0 +1,105 @@
+.big-container {
+  width: 60%;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  /* justify-content: center; */
+  /* background-color: gainsboro; */
+  margin: 0 auto;
+}
+
+.upper-container {
+  /* background-color: red; */
+  font-size: 15px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(104, 102, 103, 0.4) 0px 10px 12px;
+}
+
+#top-picks {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.scroller-container {
+  width: 104%; /* Adjust as needed */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Keep cards in a single row */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+}
+
+.scroller-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome/Safari */
+}
+
+.cardds-wrapper {
+  display: flex; /* Use Flexbox for layout */
+}
+
+.cardd {
+  position: relative; /* Make the card relatively positioned */
+  width: 250px; /* Adjust as needed */
+  height: 250px; /* Adjust as needed */
+  margin: 10px;
+  flex: 0 0 auto; /* Prevent cards from growing or shrinking */
+}
+
+.cardd-button {
+  position: absolute; /* Position the button absolutely */
+  bottom: 20px; /* Adjust button position from the bottom */
+  right: 20px; /* Adjust button position from the right */
+  padding: 10px 20px;
+  background-color: white;
+  color: green;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+.cardd-price {
+  position: absolute; /* Position the price absolutely */
+  bottom: 15px; /* Adjust price position from the bottom */
+  left: 18px; /* Adjust price position from the left */
+  color: white;
+  font-size: 18px;
+}
+.recommendation {
+  width: 104%;
+  /* background-color: red; */
+}
+.rec {
+  /* border: 2px solid black; */
+  padding: 10px;
+  margin: 10px;
+  /* box-shadow: rgba(189, 187, 188, 0.4) 0px 4px 12px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo-add-option {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.photo-add-option img {
+  width: 150px;
+  height: 150px;
+}
+
+.add-food {
+  position: absolute;
+  right: 85px;
+  top: 130px;
+  padding: 10px 20px;
+  background-color: white;
+  color: green;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid black;
+}

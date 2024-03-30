@@ -34,7 +34,9 @@ const HeaderComponent = () => {
         <input type="button" value="Search" id="search-btn" />
 
         <a href="#">Offers</a>
+        <a href="/">Home</a>
         <a href="/contact">Help</a>
+        {/* Client side routing */}
         <Link to="/contact">Contact</Link>
         <a href="#" onClick={loginChange}>
           {btnName}
