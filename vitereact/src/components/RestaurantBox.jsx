@@ -36,6 +36,10 @@ function Box() {
     setFilterRestaurantList(restaurants);
   };
 
+  //restaurant ID.
+  const resId = restaurantList.map((e) => e.info.id);
+  console.log(resId);
+
   //search
   //on every keystoke react will re render the components.
   const searchRestaurant = () => {

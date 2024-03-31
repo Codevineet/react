@@ -1,9 +1,30 @@
 import "./RestaurantMenu.css";
+import { useEffect, useState } from "react";
 import TopPicksCard from "./TopPicksCard";
 import Recommendation from "./Recommendation";
+import { MENU_API } from "../utils/constants";
+import ShimerUI from "./Shimer";
 
 const RestaurantMenu = () => {
-  return (
+  const [resInfo, setResInfo] = useState([]);
+  const [resFoods, setResFoods] = useState([]);
+
+  useEffect(() => {
+    fetchMenu();
+  }, []);
+
+  const fetchMenu = async () => {
+    const data = await fetch(MENU_API + 234);
+    const json = await data.json();
+    setResFoods(
+      json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card
+        .itemCards
+    );
+  };
+
+  return resFoods.length == 0 ? (
+    <ShimerUI />
+  ) : (
     <>
       <div className="big-container">
         <h1>Burger King</h1>
@@ -18,8 +39,8 @@ const RestaurantMenu = () => {
 
         <h2 id="top-picks">Top Picks</h2>
 
-        <div class="scroller-container">
-          <div class="cardds-wrapper">
+        <div className="scroller-container">
+          <div className="cardds-wrapper">
             <TopPicksCard />
             <TopPicksCard />
             <TopPicksCard />
@@ -30,10 +51,10 @@ const RestaurantMenu = () => {
         <div className="recommendation">
           <h1>Recommendation</h1>
           <div className="lower-container">
-            <Recommendation />
-            <Recommendation />
-            <Recommendation />
-            <Recommendation />
+            {resFoods.map((e) => {
+              return <Recommendation resData={e.card.info} />;
+
+            })}
           </div>
         </div>
       </div>
