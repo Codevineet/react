@@ -1,6 +1,7 @@
-import "./RestaurantMenu.css";
+import "../RestaurantMenu.css";
 
-const TopPicksCard = () => {
+const TopPicksCard = (props) => {
+  // console.log(props);
   return (
     <>
       <div className="cardd">

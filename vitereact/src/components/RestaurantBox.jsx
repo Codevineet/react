@@ -2,6 +2,7 @@ import HotelCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { SWIGGY_API } from "../utils/constants";
 import ShimerUI from "./Shimer";
+import { Link } from "react-router-dom";
 import ErrorTxt from "./Error";
 // import restaurantListt from "../utils/mockData";
 
@@ -18,7 +19,6 @@ function Box() {
   // if no dependency array means it is called on every render.
   //if dependency array is= then useeffect is called everytime it updated.
   useEffect(() => {
-    console.log("Hellow");
     fetchData();
     // fetchData2();
   }, []);
@@ -38,7 +38,6 @@ function Box() {
 
   //restaurant ID.
   const resId = restaurantList.map((e) => e.info.id);
-  console.log(resId);
 
   //search
   //on every keystoke react will re render the components.
@@ -55,7 +54,7 @@ function Box() {
   //rendered from the api
   //we do by using  shimer UI means redering fake things so that UI expereicnce should be good.
   //conditional rendering it is....
-  return restaurantList.length == 0 ? (
+  return restaurantList.length === 0 ? (
     <ShimerUI />
   ) : (
     <>
