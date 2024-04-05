@@ -36,8 +36,6 @@ function Box() {
     setFilterRestaurantList(restaurants);
   };
 
-  //restaurant ID.
-  const resId = restaurantList.map((e) => e.info.id);
 
   //search
   //on every keystoke react will re render the components.
@@ -90,9 +88,15 @@ function Box() {
 
       <div className="specific-location">{cityName}</div>
       <div className="restaurant-container">
-        {filterRestaurantList.map((e) => {
-          return <HotelCard key={e.info.id} restData={e.info} />;
-        })}
+        {/* {filterRestaurantList.map((e) => {
+          // return <HotelCard key={e.info.id} restData={e.info} />;
+        })} */}
+
+        {filterRestaurantList.map((e) => (
+          <Link to={"/restaurant/" + e.info.id}>
+            <HotelCard key={e.info.id} restData={e.info} />
+          </Link>
+        ))}
       </div>
     </>
   );

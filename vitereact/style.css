@@ -2,10 +2,13 @@ body {
   background-color: #fdfdfd;
   padding: 0px;
   margin: 0px;
+  text-decoration: none;
 }
 
 .Header {
   display: flex;
+  position: sticky;
+  top: 0px;
   height: 120px;
   background-color: #ffffff;
   align-items: center;
